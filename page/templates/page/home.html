@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <div id="main">
+
+        <h1 style="padding-top: 50px;">Random Quote for You</h1>
+        <br>
+        <p>What you get... depends on how the API Feels 👀</p>
+        <p><em>... It could be just what you need... or way off course.</em></p>
+        <br>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <label for="user_name"></label>
+                <!-- <input type="text" name="user_name" id="user_name" placeholder="name..."> -->
+                {{form.as_p}}
+                <input type="submit" value="Quote-Me📜">
+            </form>
+    
+            <br>
+            <p>Here is your random quote: </p>
+            <br>
+            <div id="sub-main">
+
+                {{quote}}
+            
+        </div>
+        
+    </div>
+
+{% endblock content %}
